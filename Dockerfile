@@ -1,5 +1,5 @@
-FROM openjdk:17
-WORKDIR /app
-COPY target/awscicdproject-docker.jar  awscicdproject-docker.jar
+FROM openjdk:8
 EXPOSE 8080
-CMD ["java", "-jar", "/awscicdproject-docker.jar"]
+ADD target/awscicdproject-docker.jar awscicdproject-docker.jar 
+ENTRYPOINT ["java","-jar","/awscicdproject-docker.jar"]
+
